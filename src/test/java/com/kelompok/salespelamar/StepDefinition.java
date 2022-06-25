@@ -1,6 +1,7 @@
 package com.kelompok.salespelamar;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +87,11 @@ public class StepDefinition {
 	@Then("Customer gagal login")
 	public void customer_gagal_login() {
 		tunggu(3);
-		assertEquals(configurationProperties.getMessageErrorLogin(), loginPage.getMessageErrorLogin());
+		String actualString = loginPage.getMessageErrorLogin();
+//		CharSequence expectedString;
+		assertTrue(actualString.contains(configurationProperties.getMessageErrorLogin()));
+//		assertTrue(configurationProperties.getMessageErrorLogin(), false);
+//		assertEquals(configurationProperties.getMessageErrorLogin(), loginPage.getMessageErrorLogin());
 		extentTest.log(LogStatus.PASS, "Customer gagal login");
 	}
 	
@@ -100,7 +105,9 @@ public class StepDefinition {
 	public void customer_berhasil_login() {
 		driver.navigate().refresh();
 		tunggu(2);
-		assertEquals(configurationProperties.getTxtWelcome(), loginPage.getTxtWelcome());
+		String actualString = loginPage.getTxtWelcome();
+		assertTrue(actualString.contains(configurationProperties.getTxtWelcome()));
+//		assertEquals(configurationProperties.getTxtWelcome(), loginPage.getTxtWelcome());
 		extentTest.log(LogStatus.PASS, "Customer berhasil login");
 	}
 	

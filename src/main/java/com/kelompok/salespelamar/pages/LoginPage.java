@@ -25,10 +25,10 @@ public class LoginPage {
 	@FindBy(css = "#page-container > div > div.right-content > div > div.login-content > form > div.login-buttons")
 	private WebElement btnLogin;
 	
-	@FindBy(className = "navbar_brand")
+	@FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/div[2]/div[2]")
 	private WebElement txtWelcome;
 	
-	@FindBy(xpath = "//*[@id=\"page-container\"]/div/div[2]/div")
+	@FindBy(xpath = "//*[@id=\"page-container\"]/div/div[2]/div/div[2]/div")
 	private WebElement messageErrorLogin;
 	
 	public void loginForm(String username, String password) {
