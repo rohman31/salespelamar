@@ -1,4 +1,4 @@
-package com.kelompok.salespelamar.pages;
+package com.kelompok.salespelamar.login;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

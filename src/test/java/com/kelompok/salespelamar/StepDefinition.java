@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import com.kelompok.salespelamar.config.AutomationFrameworkConfig;
 import com.kelompok.salespelamar.driver.DriverSingleton;
-import com.kelompok.salespelamar.pages.LoginPage;
+import com.kelompok.salespelamar.login.LoginPage;
 import com.kelompok.salespelamar.utils.ConfigurationProperties;
 import com.kelompok.salespelamar.utils.Constants;
 import com.relevantcodes.extentreports.ExtentReports;
