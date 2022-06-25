@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 import com.kelompok.salespelamar.config.AutomationFrameworkConfig;
+import com.kelompok.salespelamar.datapelamar.DataPelamarPage;
 import com.kelompok.salespelamar.driver.DriverSingleton;
 import com.kelompok.salespelamar.login.LoginPage;
 import com.kelompok.salespelamar.utils.ConfigurationProperties;
@@ -32,6 +33,7 @@ public class StepDefinition {
 
 	private static WebDriver driver;
 	private LoginPage loginPage;
+	private DataPelamarPage dataPelamarPage;
 	//tambahan di package pages
 	static ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/ReportTest.html");
@@ -43,6 +45,7 @@ public class StepDefinition {
 	public void setUp() {
 		DriverSingleton.getInstance(configurationProperties.getBrowser());
 		loginPage = new LoginPage();
+		dataPelamarPage = new DataPelamarPage();
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestname());
 		Utils.testCount++;
@@ -111,6 +114,13 @@ public class StepDefinition {
 		extentTest.log(LogStatus.PASS, "Customer berhasil login");
 	}
 	
+	
+	//Modul Data Pelamar
+	@When("Customer klik button klik disini")
+	public void customer_klik_button_klik_disini() {
+		dataPelamarPage.dataPelamarForm();
+		extentTest.log(LogStatus.PASS, "Customer gagal login");
+	}
 	
 	public static void tunggu(int detik) {
 		try {
