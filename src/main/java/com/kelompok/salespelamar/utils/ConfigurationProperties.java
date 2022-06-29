@@ -26,8 +26,38 @@ public class ConfigurationProperties {
 	@Value("${messageErrorLogin}")
 	private String messageErrorLogin;
 	
-	@Value("${titlePageMyBookings}")
-	private String titlePageMyBookings;
+	@Value("${txtDataPelamar}")
+	private String txtDataPelamar;
+	
+	@Value("${info}")
+	private String info;
+	
+	@Value("${recuit}")
+	private String recuit;
+
+	public String getRecuit() {
+		return recuit;
+	}
+
+	public void setRecuit(String recuit) {
+		this.recuit = recuit;
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public String getTxtDataPelamar() {
+		return txtDataPelamar;
+	}
+
+	public void setTxtDataPelamar(String txtDataPelamar) {
+		this.txtDataPelamar = txtDataPelamar;
+	}
 
 	public String getBrowser() {
 		return browser;
@@ -76,15 +106,6 @@ public class ConfigurationProperties {
 	public void setMessageErrorLogin(String messageErrorLogin) {
 		this.messageErrorLogin = messageErrorLogin;
 	}
-
-	public String getTitlePageMyBookings() {
-		return titlePageMyBookings;
-	}
-
-	public void setTitlePageMyBookings(String titlePageMyBookings) {
-		this.titlePageMyBookings = titlePageMyBookings;
-	}
-	
 	
 	
 	

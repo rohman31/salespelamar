@@ -118,8 +118,20 @@ public class StepDefinition {
 	//Modul Data Pelamar
 	@When("Customer klik button klik disini")
 	public void customer_klik_button_klik_disini() {
-		dataPelamarPage.dataPelamarForm();
+		dataPelamarPage.buttonDisisi();
+		dataPelamarPage.dataPelamarForm(configurationProperties.getInfo(), configurationProperties.getRecuit());
 		extentTest.log(LogStatus.PASS, "Customer gagal login");
+	}
+	
+	
+	@Then("Customer berhasil masuk ke form input pelamar")
+	public void customer_berhasil_masuk_ke_form_input_pelamar() {
+//		driver.navigate().refresh();
+		tunggu(2);
+		String actualString = dataPelamarPage.getTxtDataPelamar();
+		assertTrue(actualString.contains(configurationProperties.getTxtDataPelamar()));
+//		assertEquals(configurationProperties.getTxtWelcome(), loginPage.getTxtWelcome());
+		extentTest.log(LogStatus.PASS, "Customer berhasil login");
 	}
 	
 	public static void tunggu(int detik) {
